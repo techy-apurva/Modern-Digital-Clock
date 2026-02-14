@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.4s ease;
+}
+
+/* DARK THEME */
+body.dark{
+    background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000000);
+    background-size:400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color:#00f7ff;
+}
+
+/* LIGHT THEME */
+body.light{
+    background: linear-gradient(-45deg,#f6d365,#fda085,#fbc2eb,#a6c1ee);
+    background-size:400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color:#222;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.wrapper{
+    text-align:center;
+}
+
+.clock-card{
+    padding:40px 60px;
+    border-radius:25px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.1);
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+
+.time{
+    font-size:80px;
+    font-weight:600;
+    letter-spacing:3px;
+}
+
+.colon{
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+.ampm{
+    font-size:25px;
+    margin-left:15px;
+}
+
+#date{
+    margin-top:15px;
+    font-size:18px;
+    opacity:0.8;
+}
+
+button{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+body.dark button{
+    background:#00f7ff;
+    color:#000;
+}
+
+body.light button{
+    background:#222;
+    color:#fff;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
